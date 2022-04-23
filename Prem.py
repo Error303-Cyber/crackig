@@ -44,9 +44,10 @@ def __apikey__():
             exit()
         else:
             _header_ = {
-                "token": "WyIxNjI5NTcwOSIsImhDaGhxdzg3TUtnN1IyeGpMOWFhUVVuL01DY0g1ZlJ4QUoxd3N5Z1AiXQ==",
-                "productid": "14640",
-                "key": apikey_input,
+                "token": "WyIxNjk5NDQzNSIsInlDTlJ4Z0g4ekdXYWg5ZnFLL3czaTVhZzNvc3RNb2dCVDE5cFpON1UiXQ==",
+                "productid": "5",
+                "key": "MTMPW-VZERP-JZVNZ-SCPZM",
+
                 "sigin": True,
             }
             with requests.Session() as ses:
