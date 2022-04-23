@@ -26,44 +26,6 @@ __logo__ = f"""{H} ___ ___ ___ __  __ ___ _   _ __  __
 {P}[{K}#{P}]{K}\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94\xe2\x80\x94"""
 useragent = 'Mozilla/5.0 (Linux; Android 6.0; HUAWEI VNS-L31 Build/HUAWEIVNS-L31; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/65.0.3325.109 Mobile Safari/537.36 Instagram 37.0.0.21.97 Android (23/6.0; 480dpi; 1080x1812; HUAWEI; HUAWEI VNS-L31; HWVNS-H; hi6250; pt_PT; 98288242)'
 
-def __apikey__():
-    try:
-        os.system("clear")
-        print(f"""{H} _     _                    _
-{H}| |   (_)___  ___ _ __  ___(_)
-{H}| |   | / __|/ _ /'_  |/ __| |
-{P}| |___| \__ \ __/ | | |__  | |
-{P}|_____|_|___/___|_| |_|___/|_|
-
-{K}[{P}#{K}]{P} Silahkan Masukan Apikey Anda Jika Anda Belum Mempunyai Apikey Ketik {K}[{H}Get{K}]{P} Untuk Mendapatkan Apikey...""")
-        apikey_input = input(f"{H}[{P}?{H}]{P} Apikey :{T} ")
-        if apikey_input in ["get", "Get", "GET"]:
-            print(f"{M}[{P}*{M}]{P} Anda Bisa Menghubungi Saya Secara Manual WhatsApp : 6281220439155")
-            time.sleep(3)
-            os.system("xdg-open https://wa.me/6281220439155?text=Saya ingin membeli lisensi crack instagram")
-            exit()
-        else:
-            _header_ = {
-                "token": "WyIxNjk5NDQzNSIsInlDTlJ4Z0g4ekdXYWg5ZnFLL3czaTVhZzNvc3RNb2dCVDE5cFpON1UiXQ==",
-                "productid": "5",
-                "key": "MTMPW-VZERP-JZVNZ-SCPZM",
-
-                "sigin": True,
-            }
-            with requests.Session() as ses:
-                req = ses.get("https://app.cryptolens.io/api/key/activate?", params=_header_).json()["licenseKey"]
-                open("Data/apikey.txt", "w").write(apikey_input)
-                resp = (req["expires"].split("T")[0].split("-"))
-                resp_split = (req["expires"].split("T")[1].split(":"))
-                print(f"{H}[{P}*{H}]{P} Expired :{K} {resp[2]}/{resp[1]}/{resp[0]} {resp_split[0]}.{resp_split[1]}")
-                time.sleep(3)
-                __menu__()
-    except (KeyError):
-        exit(f"{P}[{M}!{P}]{M} Apikey Invalid")
-    except Exception as err:
-        exit(f"{P}[{M}!{P}]{M} {err}")
-
-
 def __login__():
     try:
         os.system("clear")
